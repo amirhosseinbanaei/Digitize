@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-stone-100" style="direction: rtl;">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>دیجی تایز</title>
+   <!-- Tailwind css file -->
+   <link rel="stylesheet" href="./build/tailwind.css">
+   <!-- Add favicon -->
+   <link rel="shortcut icon" href="/assets/images/main/small-logo.png" type="image/x-icon">
+</head>
+
+<body>
+   <!-- Small mobile header and large menu -->
+   <header>
+      <!-- Small header (Mobile header) -->
+      <small-header title="خانه"></small-header>
+      <!-- Large menu (Desktop menu) -->
+      <large-menu></large-menu>
+   </header>
+
+   <main>
+      <!-- Small menu (mobile menu) -->
+      <small-menu current-page="Home"></small-menu>
+
+      <!-- Mobile filter and sort section -->
+      <section class="w-full md:w-1/2 h-11 px-4 flex justify-between mt-4 gap-x-3 lg:hidden">
+         <!-- Sort section -->
+         <div class="w-1/2 h-full bg-stone-50 rounded-md flex items-center pr-2 gap-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-2 text-orange-600" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" stroke-width="2">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4" />
+            </svg>
+            <p class="text-slate-800 text-xs font-medium">محبوب ترین محصول</p>
+         </div>
+         <!-- Filter section container -->
+         <div class="w-1/2 h-full bg-stone-50 rounded-md flex items-center pr-2 gap-x-2 filterSection">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" stroke-width="2">
+               <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+            </svg>
+            <p class="text-xs text-slate-800 font-medium">فیلتر محصول</p>
+         </div>
+      </section>
+
+      <!-- Filter section when open -->
+      <div class="w-full h-3/4 absolute hidden flex-col justify-between bottom-0 z-50 bg-stone-50 lg:hidden p-10 filterSectionContent">
+         <!-- Filter section cotainer -->
+         <div class="w-full h-4/5 overflow-scroll">
+            <!-- Filter section -->
+            <div class="w-full md:w-1/2 md:mx-auto h-auto flex flex-col gap-y-7 mb-2">
+               <p class="font-bold text-orange-400 text-lg">فیلتر محصول</p>
+
+               <!-- Brand products -->
+               <filter-accordion accordion-title="برند محصول" accordion-items="اپل سامسونگ وانپلاس">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-4 absolute top-2 right-1 text-slate-800"
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                     <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                  </svg>
+               </filter-accordion>
+
+               <!-- Colors of pruducts -->
+               <filter-accordion accordion-title="رنگ محصول" accordion-items="آبی قرمز زرد سبز نارنجی خاکستری">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-4 absolute top-2 right-1 text-slate-800"
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                     <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                  </svg>
+               </filter-accordion>
+
+               <!-- Price range -->
+               <div class="w-full h-auto mb-10">
+                  <!-- Price accordion title -->
+                  <div class="w-full h-7 flex justify-between">
+                     <span
+                        class="w-full h-auto flex gap-x-2 items-center hover:cursor-pointer hover:bg-gray-100 p-2 rounded-2xl relative priceAccrodion">
+                        <span class="w-4 h-4 bg-gray-300 bg-opacity-30 rounded-full relative mb-3">
+                           <svg xmlns="http://www.w3.org/2000/svg"
+                              class="h-auto w-4 absolute top-2 right-1 text-slate-800" viewBox="0 0 20 20"
+                              fill="currentColor">
+                              <path fill-rule="evenodd"
+                                 d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
+                                 clip-rule="evenodd" />
+                           </svg>
+                        </span>
+                        <p class="text-slate-800 mr-1">قیمت</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-4 absolute top-1 left-3 text-slate-800"
+                           fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                     </span>
+                  </div>
+                  <!-- Price range -->
+                  <div class="w-11/12 h-auto mr-3 mt-4 justify-center hidden gap-y-4 accordionItemsContainer flex-col">
+                     <input type="range" min="0" max="100" value="0" class="range range-xs w-full range-primary" />
+                     <div class="w-full flex justify-between">
+                        <p class="text-slate-800 text-xs">59,322,800</p>
+                        <p class="text-slate-800 text-xs">1,200,000</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Accept and decline fileter btn container -->
+         <div class="w-full h-1/5 flex gap-x-3 p-8">
+            <button class="w-full h-12 bg-orange-400 text-stone-50 rounded acceptFilter">تایید</button>
+            <button class="w-full h-12 bg-orange-100 border-2 border-orange-600 text-orange-500 rounded declineFilter">لغو فیلتر</button>
+         </div>
+      </div>
+
+      <!-- Card and side bar container -->
+      <div class="w-full h-auto flex relative gap-x-5 mt-5">
+         <!-- Side bar -->
+         <aside class="w-3/12 2xl:w-2/12 h-2/5 bg-stone-50 rounded-xl mr-2 hidden lg:flex flex-col pr-6 pl-10 gap-y-7">
+            <!-- Category section -->
+            <div class="w-full h-auto flex flex-col gap-y-2 mt-7">
+               <p class="font-bold text-orange-400 text-lg">دسته بندی</p>
+               <!-- Mobile phone -->
+               <span class="w-full h-auto flex gap-x-2 items-center hover:cursor-pointer hover:bg-gray-100 p-2 rounded-2xl">
+                  <span class="w-4 h-4 bg-gray-300 bg-opacity-30 rounded-full relative mb-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-4 absolute top-2 right-1 text-slate-800"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                           d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                     </svg>
+                  </span>
+                  <p class="text-slate-800 mr-1">تلفن همراه</p>
+               </span>
+               <!-- Laptop -->
+               <span class="flex gap-x-2 items-center hover:cursor-pointer hover:bg-gray-100 p-2 rounded-2xl">
+                  <span class="w-4 h-4 bg-gray-300 bg-opacity-30 rounded-full relative mb-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-4 absolute top-2 right-1 text-slate-800"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                           d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                     </svg>
+                  </span>
+                  <p class="text-slate-800 mr-1">لپ تاپ</p>
+               </span>
+               <!-- Smart watch -->
+               <span class="flex gap-x-2 items-center hover:cursor-pointer hover:bg-gray-100 p-2 rounded-2xl">
+                  <span class="w-4 h-4 bg-gray-300 bg-opacity-30 rounded-full relative mb-3">
+                     </svg>
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-4 absolute top-2 right-1 text-slate-800"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                           d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                     </svg>
+                  </span>
+                  <p class="text-slate-800 mr-1">ساعت هوشمند</p>
+               </span>
+            </div>
+
+            <!-- Filter section -->
+            <div class="w-full h-auto flex flex-col gap-y-7 mb-2">
+               <p class="font-bold text-orange-400 text-lg">فیلتر محصول</p>
+
+               <!-- Brand products -->
+               <filter-accordion accordion-title="برند محصول" accordion-items="اپل سامسونگ وانپلاس">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-4 absolute top-2 right-1 text-slate-800"
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                     <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                  </svg>
+               </filter-accordion>
+
+               <!-- Colors of pruducts -->
+               <filter-accordion accordion-title="رنگ محصول" accordion-items="آبی قرمز زرد سبز نارنجی خاکستری">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-4 absolute top-2 right-1 text-slate-800"
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                     <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                  </svg>
+               </filter-accordion>
+
+               <!-- Price range -->
+               <div class="w-full h-auto mb-10">
+                  <!-- Price accordion title -->
+                  <div class="w-full h-7 flex justify-between">
+                     <span
+                        class="w-full h-auto flex gap-x-2 items-center hover:cursor-pointer hover:bg-gray-100 p-2 rounded-2xl relative priceAccrodionLarge">
+                        <span class="w-4 h-4 bg-gray-300 bg-opacity-30 rounded-full relative mb-3">
+                           <svg xmlns="http://www.w3.org/2000/svg"
+                              class="h-auto w-4 absolute top-2 right-1 text-slate-800" viewBox="0 0 20 20"
+                              fill="currentColor">
+                              <path fill-rule="evenodd"
+                                 d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
+                                 clip-rule="evenodd" />
+                           </svg>
+                        </span>
+                        <p class="text-slate-800 mr-1">قیمت</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-4 absolute top-1 left-3 text-slate-800"
+                           fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                     </span>
+                  </div>
+                  <!-- Price range -->
+                  <div class="w-11/12 h-auto mr-3 mt-4 justify-center hidden gap-y-4 accordionItemsContainer flex-col">
+                     <input type="range" min="0" max="100" value="0" class="range range-xs w-full range-primary" />
+                     <div class="w-full flex justify-between">
+                        <p class="text-slate-800 text-xs">59,322,800</p>
+                        <p class="text-slate-800 text-xs">1,200,000</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </aside>
+
+         <!-- Large sort container and card products container -->
+         <section class="w-full h-full gap-y-6 flex flex-col relative px-4 overflow-hidden">
+            <!-- Large sort container -->
+            <div class="w-full h-14 bg-stone-50 mt-1 rounded-md hidden lg:block">
+               <!-- Large container -->
+               <div class="w-10/12 h-full flex gap-x-5 pr-5 items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-2 text-orange-600" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                     <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4" />
+                  </svg>
+                  <p class="font-bold text-sm text-slate-800">محبوب ترین محصول</p>
+                  <p class="font-medium text-sm text-gray-300">پربازدیدترین محصول</p>
+                  <p class="font-medium text-sm text-gray-300">گران‌ترین محصول</p>
+                  <p class="font-medium text-sm text-gray-300">ارزان ترین محصول</p>
+               </div>
+            </div>
+            <!-- Card component section container -->
+            <section
+               class="w-full h-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-x-3 gap-y-10 mb-20 cardProductContainer">
+            </section>
+
+            <!-- Pagination Contaienr -->
+            <div class="w-11/12 h-12 absolute bottom-0 mx-auto flex justify-center">
+               <div class="btn-group" style="direction: ltr;">
+                  <button
+                     class="btn btn-disabled hover:bg-orange-200 hover:border-orange-500 text-orange-500">«</button>
+                  <button class="btn hover:bg-orange-200 hover:border-orange-500 text-orange-500">Page 1</button>
+                  <button class="btn hover:bg-orange-200 hover:border-orange-500 text-orange-500">»</button>
+               </div>
+            </div>
+         </section>
+      </div>
+   </main>
+
+   <footer>
+      <custom-footer></custom-footer>
+   </footer>
+
+   <script type="module" src="/src/js/configComponents.js"></script>
+   <script type="module" src="/src/js/home.js"> </script>
+</body>
+
+</html>

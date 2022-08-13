@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-stone-100" style="direction: rtl;">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>علاقه مندی ها</title>
+   <!-- Tailwind css file -->
+   <link rel="stylesheet" href="./build/tailwind.css">
+   <!-- Add favicon -->
+   <link rel="shortcut icon" href="/assets/images/main/small-logo.png" type="image/x-icon">
+</head>
+
+<body>
+   <!-- Small mobile header and large menu -->
+   <header>
+      <!-- Small header (Mobile header) -->
+      <small-header title="علاقه مندی ها" hide-logo="true"></small-header>
+      <!-- Large menu (Desktop menu) -->
+      <large-menu></large-menu>
+   </header>
+
+   <main>
+      <!-- Small menu (mobile menu) -->
+      <small-menu current-page="Favorite"></small-menu>
+      <!-- Main section -->
+      <section class="w-full h-auto mt-9 px-6 flex flex-col lg:flex-row">
+         <!-- product main container -->
+         <div class="w-full h-auto lg:w-3/5 lg:mx-auto flex flex-col favoriteCardContainer">
+            <!-- favorite title and back btn for large display -->
+            <div class="w-full hidden md:flex justify-between items-center h-11">
+               <p class="text-slate-800 font-medium text-xl">علاقه مندی ها</p>
+               <a href="/public/home.html" class="text-orange-400 font-medium text-base">بازگشت به خانه</a>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <script type="module" src="/src/js/configComponents.js"></script>
+   <script src="/src/js/favortie.js"></script>
+</body>
+
+</html>

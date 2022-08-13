@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" lang="en" class="bg-stone-100" style="direction: rtl;">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title></title>
+   <!-- Tailwind css file -->
+   <link rel="stylesheet" href="./build/tailwind.css">
+   <!-- Add favicon -->
+   <link rel="shortcut icon" href="/assets/images/main/small-logo.png" type="image/x-icon">
+</head>
+
+<body>
+   <!-- Small mobile header and large menu -->
+   <header>
+      <!-- Large menu (Desktop menu) -->
+      <large-menu></large-menu>
+   </header>
+
+   <main>
+      <!-- add to cart component for smlall display -->
+      <div class="w-full h-20 rounded-t-xl bg-stone-50 fixed bottom-0 z-50 flex lg:hidden">
+         <div class="w-1/2 h-full flex items-center p-3">
+            <button class="h-12 w-full bg-orange-500 text-xs md:text-sm rounded-md text-stone-50 addToCartBtn">
+               افزودن به سبد خرید
+            </button>
+         </div>
+         <div class="w-1/2 h-full justify-center gap-x-2 items-center flex">
+            <p class="text-slate-800 text-lg md:text-xl font-bold productPrice">28,354,000</p>
+            <p class="text-slate-800 text-lg md:text-xl">تومان</p>
+         </div>
+      </div>
+
+      <!-- Card and side bar container -->
+      <div class="w-full h-auto flex relative gap-x-5 mt-5">
+         <!-- Side bar -->
+         <aside class="w-3/12 2xl:w-2/12 h-2/5 bg-stone-50 rounded-xl mr-2 hidden lg:flex flex-col pr-6 pl-10 gap-y-4">
+            <!-- Category section -->
+            <div class="w-full h-auto flex flex-col gap-y-2 mt-7">
+               <p class="font-bold text-orange-400 text-lg">دسته بندی</p>
+               <!-- Mobile phone -->
+               <span
+                  class="w-full h-auto flex gap-x-2 items-center hover:cursor-pointer hover:bg-gray-100 p-2 rounded-2xl">
+                  <span class="w-4 h-4 bg-gray-300 bg-opacity-30 rounded-full relative mb-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-4 absolute top-2 right-1 text-slate-800"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                           d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                     </svg>
+                  </span>
+                  <p class="text-slate-800 mr-1">تلفن همراه</p>
+               </span>
+               <!-- Laptop -->
+               <span
+                  class="flex gap-x-2 items-center hover:cursor-pointer hover:bg-gray-100 p-2 rounded-2xl">
+                  <span class="w-4 h-4 bg-gray-300 bg-opacity-30 rounded-full relative mb-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-4 absolute top-2 right-1 text-slate-800"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                           d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                     </svg>
+                  </span>
+                  <p class="text-slate-800 mr-1">لپ تاپ</p>
+               </span>
+               <!-- Smart watch -->
+               <span
+                  class="flex gap-x-2 items-center hover:cursor-pointer hover:bg-gray-100 p-2 rounded-2xl">
+                  <span class="w-4 h-4 bg-gray-300 bg-opacity-30 rounded-full relative mb-3">
+                     </svg>
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-auto w-4 absolute top-2 right-1 text-slate-800"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                           d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                     </svg>
+                  </span>
+                  <p class="text-slate-800 mr-1">ساعت هوشمند</p>
+               </span>
+            </div>
+
+            <!-- Category section -->
+            <div class="w-full h-auto flex flex-col gap-y-2 mt-7 mb-3">
+               <p class="font-bold text-orange-400 text-lg">دسترسی سریع</p>
+               <!-- Mobile phone -->
+               <span
+                  class="w-full h-auto flex gap-x-2 items-center hover:cursor-pointer hover:bg-gray-100 p-2 rounded-2xl">
+                  <p class="text-slate-800 mr-1 fastAccessItems">طراحی</p>
+               </span>
+               <!-- Laptop -->
+               <span class="flex gap-x-2 items-center hover:cursor-pointer hover:bg-gray-100 p-2 rounded-2xl">
+                  <p class="text-slate-800 mr-1 fastAccessItems">دوربین</p>
+               </span>
+               <!-- Smart watch -->
+               <span class="flex gap-x-2 items-center hover:cursor-pointer hover:bg-gray-100 p-2 rounded-2xl">
+                  <p class="text-slate-800 mr-1 fastAccessItems">باتری</p>
+               </span>
+            </div>
+         </aside>
+
+         <!-- breadcrumbs container and products container -->
+         <section class="w-full h-full gap-y-6 flex flex-col  relative px-4 overflow-hidden">
+            <!-- breadcrumbs container -->
+            <div class="w-full h-14 lg:bg-stone-50 mt-1 rounded-md">
+               <!-- Large breadcrumbs container -->
+               <div class="w-10/12 h-full flex gap-x-5 pr-5 items-center">
+                  <div class="text-sm breadcrumbs text-slate-800">
+                     <ul>
+                        <li><a class="text-orange-400"></a></li>
+                        <li><a class="text-orange-400"></a></li>
+                        <li class="text-slate-800"></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <!-- product main section container -->
+            <section class="w-full h-auto grid grid-cols-1 lg:grid-cols-12 lg:bg-slate-50 rounded-xl lg:p-5">
+               <!-- Large phone photo container -->
+               <div
+                  class="w-full lg:col-span-full xl:col-span-4 2xl:col-span-4 h-full flex items-center justify-center">
+                  <img src="" class="w-auto h-5/6 xl:h-4/6 productLargeImage" alt="This is large product image">
+               </div>
+               <!-- Product name and information and price container -->
+               <div class="w-full h-auto grid grid-cols-12 col-span-full xl:col-span-8 2xl:col-span-8 mb-20 lg:mb-0">
+                  <!-- Product name and color section and information -->
+                  <div
+                     class="w-full h-auto col-span-full lg:col-span-7 xl:col-span-6 2xl:col-span-8 flex flex-col gap-y-3 lg:p-5 xl:pt-10 xl:px-7 2xl:px-5">
+                     <!-- Product label -->
+                     <span
+                        class="w-full h-auto mt-2 justify-center lg:justify-start flex gap-x-2 items-center rounded-2xl">
+                        <span class="w-4 h-4 bg-orange-300 bg-opacity-30 rounded-full relative mb-3">
+                           <svg xmlns="http://www.w3.org/2000/svg"
+                              class="h-auto w-4 absolute top-2 right-1 text-orange-500" fill="none" viewBox="0 0 24 24"
+                              stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                 d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                           </svg>
+                        </span>
+                        <p class="text-orange-500 mr-1 productTypeLabel">تلفن همراه</p>
+                        <p class="text-orange-500 productLabel">اپل</p>
+                     </span>
+                     <!-- Product name container -->
+                     <div class="w-full h-auto flex flex-col items-center lg:items-start gap-y-3">
+                        <h1 class="text-slate-800 font-bold text-lg productTitle">گوشی آیفون 13 128 گیگابایت</h1>
+                        <h3 class="text-slate-400 lg:text-slate-800 text-base productModel">Apple Iphone 13 128 GB</h3>
+                     </div>
+                     <!-- Product color section -->
+                     <div
+                        class="w-8/12 md:w-5/12 lg:w-10/12 2xl:w-5/12 h-16 mt-5 items-center mx-auto lg:mx-0 flex justify-between lg:border-t border-gray-200">
+                        <p class="font-medium text-slate-800 text-base mt-2">انتخاب رنگ :</p>
+                        <span class="h-1/2 items-center flex relative w-auto colorsContainer"> 
+                        </span>
+                     </div>
+                     <!-- Product seller info for small display -->
+                     <div class="w-11/12 h-auto flex lg:hidden flex-col gap-y-3 items-center">
+                        <!-- Shop -->
+                        <span class="w-auto h-auto mt-2 flex gap-x-2 items-center">
+                           <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="12" cy="8" r="8" fill="#E2E2E2" />
+                              <path
+                                 d="M1.75586 11.5449V14.1641C1.75586 16.7833 2.80586 17.8333 5.42503 17.8333H8.56919C11.1884 17.8333 12.2384 16.7833 12.2384 14.1641V11.5449"
+                                 stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M7.00012 11.9993C8.06762 11.9993 8.85512 11.1302 8.75012 10.0627L8.36512 6.16602H5.64095L5.25012 10.0627C5.14512 11.1302 5.93262 11.9993 7.00012 11.9993Z"
+                                 stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M10.681 11.9993C11.8593 11.9993 12.7226 11.0427 12.606 9.87018L12.4426 8.26602C12.2326 6.74935 11.6493 6.16602 10.121 6.16602H8.3418L8.75013 10.2552C8.8493 11.2177 9.71846 11.9993 10.681 11.9993Z"
+                                 stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M3.29005 11.9993C4.25255 11.9993 5.12172 11.2177 5.21505 10.2552L5.34339 8.96602L5.62339 6.16602H3.84422C2.31589 6.16602 1.73255 6.74935 1.52255 8.26602L1.36505 9.87018C1.24839 11.0427 2.11172 11.9993 3.29005 11.9993Z"
+                                 stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M7.00008 14.916C6.02591 14.916 5.54175 15.4002 5.54175 16.3743V17.8327H8.45841V16.3743C8.45841 15.4002 7.97425 14.916 7.00008 14.916Z"
+                                 stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                           </svg>
+                           <p class="text-slate-800 text-sm font-semibold">فروشنده : </p>
+                           <p class="text-slate-800 text-sm">دیجی تایز</p>
+                        </span>
+                        <!-- Varenty -->
+                        <span class="w-auto h-auto mt-2 flex gap-x-2 items-center">
+                           <svg width="21" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="13" cy="8" r="8" fill="#E2E2E2" />
+                              <path
+                                 d="M7.43 3.58 3.897 4.91c-.815.305-1.48 1.268-1.48 2.132v5.263c0 .836.552 1.934 1.225 2.437l3.046 2.274c.999.75 2.642.75 3.64 0l3.046-2.274c.673-.503 1.226-1.6 1.226-2.437V7.043c0-.87-.666-1.834-1.48-2.139L9.583 3.58c-.602-.22-1.566-.22-2.153 0Z"
+                                 stroke="#222F5D" stroke-width="1.063" stroke-linecap="round" stroke-linejoin="round" />
+                           </svg>
+                           <p class="text-slate-800 text-sm font-semibold">گارانتی : </p>
+                           <p class="text-slate-800 text-sm">18 ماه زرین خدمت</p>
+                        </span>
+                        <!-- Send product -->
+                        <span class="w-auto h-auto mt-2 flex gap-x-2 items-center">
+                           <svg width="20" height="21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="12" cy="8" r="8" fill="#E2E2E2" />
+                              <path
+                                 d="M10 6.333V13c0 .733-.6 1.333-1.333 1.333H1.333V10.08a2.6 2.6 0 0 0 2.06.92 2.563 2.563 0 0 0 1.734-.707c.206-.173.38-.393.513-.633.24-.407.373-.887.36-1.387a2.655 2.655 0 0 0-.907-1.94H10Z"
+                                 stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M14.667 14.333v2c0 1.107-.894 2-2 2H12C12 17.6 11.4 17 10.667 17c-.734 0-1.334.6-1.334 1.333H6.667c0-.733-.6-1.333-1.334-1.333C4.6 17 4 17.6 4 18.333h-.667c-1.106 0-2-.893-2-2v-2h7.334C9.4 14.333 10 13.733 10 13V8.333h1.227c.48 0 .92.26 1.16.673L13.527 11h-.86c-.367 0-.667.3-.667.666v2c0 .367.3.667.667.667h2Z"
+                                 stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M5.333 19.667a1.333 1.333 0 1 0 0-2.667 1.333 1.333 0 0 0 0 2.667ZM10.667 19.667a1.333 1.333 0 1 0 0-2.667 1.333 1.333 0 0 0 0 2.667ZM14.667 13v1.333h-2a.669.669 0 0 1-.667-.666v-2c0-.367.3-.667.667-.667h.86l1.14 2Z"
+                                 stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M6 8.333c0 .8-.353 1.513-.907 2a2.666 2.666 0 1 1-1.76-4.667A2.666 2.666 0 0 1 6 8.333Z"
+                                 stroke="#222F5D" stroke-width="1.125" stroke-miterlimit="10" stroke-linecap="round"
+                                 stroke-linejoin="round" />
+                              <path d="M3.5 7.499v1l-.833.5" stroke="#222F5D" stroke-width="1.125"
+                                 stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round">
+                           </svg>
+                           <p class="text-slate-800 text-sm font-semibold">ارسال توسط : </p>
+                           <p class="text-slate-800 text-sm">انبار تهران</p>
+                        </span>
+                     </div>
+                     <!-- Product Info -->
+                     <div
+                        class="w-full h-auto flex flex-col gap-y-7 bg-stone-50 lg:bg-transparent py-3 px-6 lg:p-0 rounded-xl mt-3 lg:m-0">
+                        <div class="w-full h-auto flex mt-4 flex-col">
+                           <p class="text-slate-800 font-medium">ویژگی های کالا:</p>
+                           <ul class="list-disc mt-4 flex flex-col gap-y-3 mr-5">
+                              <li class="text-orange-500">
+                                 <span class="text-slate-800 text-sm">حافظه داخلی :</span>
+                                 <p class="text-slate-800 font-bold text-sm mt-1 storageFeature">128 گیگابایت</p>
+                              </li>
+                              <li class="text-orange-500">
+                                 <span class="text-slate-800 text-sm">بازه صفحه نمایش :</span>
+                                 <p class="text-slate-800 font-bold text-sm mt-1 displayFeature"></p>
+                              </li>
+                              <li class="text-orange-500">
+                                 <span class="text-slate-800 text-sm">سرعت شارژ :</span>
+                                 <p class="text-slate-800 font-bold text-sm mt-1 chargeFeature"></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Product varanty shop and price container for large display -->
+                  <div class="w-72 h-80 col-span-auto mt-10 mr-5 hidden lg:flex flex-col rounded-md p-3 justify-between"
+                     style="background-color: #F4F4F4;">
+                     <!-- Shop and varanty container -->
+                     <div class="w-full h-auto flex flex-col gap-y-4">
+                        <!-- Shop -->
+                        <span class="w-full h-auto mt-2 justify-center lg:justify-start flex gap-x-2 items-center">
+                           <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="12" cy="8" r="8" fill="#E2E2E2" />
+                              <path
+                                 d="M1.75586 11.5449V14.1641C1.75586 16.7833 2.80586 17.8333 5.42503 17.8333H8.56919C11.1884 17.8333 12.2384 16.7833 12.2384 14.1641V11.5449"
+                                 stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M7.00012 11.9993C8.06762 11.9993 8.85512 11.1302 8.75012 10.0627L8.36512 6.16602H5.64095L5.25012 10.0627C5.14512 11.1302 5.93262 11.9993 7.00012 11.9993Z"
+                                 stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M10.681 11.9993C11.8593 11.9993 12.7226 11.0427 12.606 9.87018L12.4426 8.26602C12.2326 6.74935 11.6493 6.16602 10.121 6.16602H8.3418L8.75013 10.2552C8.8493 11.2177 9.71846 11.9993 10.681 11.9993Z"
+                                 stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M3.29005 11.9993C4.25255 11.9993 5.12172 11.2177 5.21505 10.2552L5.34339 8.96602L5.62339 6.16602H3.84422C2.31589 6.16602 1.73255 6.74935 1.52255 8.26602L1.36505 9.87018C1.24839 11.0427 2.11172 11.9993 3.29005 11.9993Z"
+                                 stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M7.00008 14.916C6.02591 14.916 5.54175 15.4002 5.54175 16.3743V17.8327H8.45841V16.3743C8.45841 15.4002 7.97425 14.916 7.00008 14.916Z"
+                                 stroke="#222F5D" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                           </svg>
+                           <p class="text-slate-800 text-sm font-semibold">فروشنده : </p>
+                           <p class="text-slate-800 text-sm">دیجی تایز</p>
+                        </span>
+                        <!-- Varenty -->
+                        <span class="w-full h-auto mt-2 justify-center lg:justify-start flex gap-x-2 items-center">
+                           <svg width="21" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="13" cy="8" r="8" fill="#E2E2E2" />
+                              <path
+                                 d="M7.43 3.58 3.897 4.91c-.815.305-1.48 1.268-1.48 2.132v5.263c0 .836.552 1.934 1.225 2.437l3.046 2.274c.999.75 2.642.75 3.64 0l3.046-2.274c.673-.503 1.226-1.6 1.226-2.437V7.043c0-.87-.666-1.834-1.48-2.139L9.583 3.58c-.602-.22-1.566-.22-2.153 0Z"
+                                 stroke="#222F5D" stroke-width="1.063" stroke-linecap="round" stroke-linejoin="round" />
+                           </svg>
+                           <p class="text-slate-800 text-sm font-semibold">گارانتی : </p>
+                           <p class="text-slate-800 text-sm">18 ماه زرین خدمت</p>
+                        </span>
+                        <!-- Send product -->
+                        <span class="w-full h-auto mt-2 justify-center lg:justify-start flex gap-x-2 items-center">
+                           <svg width="20" height="21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="12" cy="8" r="8" fill="#E2E2E2" />
+                              <path
+                                 d="M10 6.333V13c0 .733-.6 1.333-1.333 1.333H1.333V10.08a2.6 2.6 0 0 0 2.06.92 2.563 2.563 0 0 0 1.734-.707c.206-.173.38-.393.513-.633.24-.407.373-.887.36-1.387a2.655 2.655 0 0 0-.907-1.94H10Z"
+                                 stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M14.667 14.333v2c0 1.107-.894 2-2 2H12C12 17.6 11.4 17 10.667 17c-.734 0-1.334.6-1.334 1.333H6.667c0-.733-.6-1.333-1.334-1.333C4.6 17 4 17.6 4 18.333h-.667c-1.106 0-2-.893-2-2v-2h7.334C9.4 14.333 10 13.733 10 13V8.333h1.227c.48 0 .92.26 1.16.673L13.527 11h-.86c-.367 0-.667.3-.667.666v2c0 .367.3.667.667.667h2Z"
+                                 stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M5.333 19.667a1.333 1.333 0 1 0 0-2.667 1.333 1.333 0 0 0 0 2.667ZM10.667 19.667a1.333 1.333 0 1 0 0-2.667 1.333 1.333 0 0 0 0 2.667ZM14.667 13v1.333h-2a.669.669 0 0 1-.667-.666v-2c0-.367.3-.667.667-.667h.86l1.14 2Z"
+                                 stroke="#222F5D" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                 d="M6 8.333c0 .8-.353 1.513-.907 2a2.666 2.666 0 1 1-1.76-4.667A2.666 2.666 0 0 1 6 8.333Z"
+                                 stroke="#222F5D" stroke-width="1.125" stroke-miterlimit="10" stroke-linecap="round"
+                                 stroke-linejoin="round" />
+                              <path d="M3.5 7.499v1l-.833.5" stroke="#222F5D" stroke-width="1.125"
+                                 stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round">
+                           </svg>
+                           <p class="text-slate-800 text-sm font-semibold">ارسال توسط : </p>
+                           <p class="text-slate-800 text-sm">انبار تهران</p>
+                        </span>
+                     </div>
+                     <!-- Product price and add to cart btn -->
+                     <div class="w-full h-auto flex flex-col gap-y-4 items-center">
+                        <span class="flex gap-x-2">
+                           <p class="text-orange-400 font-bold text-xl productPrice">28,859,000</p>
+                           <p class="text-orange-400 font-bold text-xl">تومان</p>
+                        </span>
+                        <button class="h-12 w-full bg-orange-500 rounded-md text-stone-50 addToCartBtn">
+                           افزودن به سبد خرید
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- Product descriptions -->
+            <section
+               class="w-full h-auto flex flex-col gap-y-12 p-4 lg:p-10 lg:mt-3 lg:bg-stone-50 rounded-xl mb-10 descriptionContainer">
+               <!-- product review container -->
+               <div
+                  class="w-full h-auto flex flex-col gap-y-7 bg-stone-50 lg:bg-transparent pt-10 p-6 rounded-xl lg:p-0">
+                  <h1 class="font-bold text-slate-800">نقد و بررسی این محصول</h1>
+                  <p class="text-slate-800 leading-8 text-justify reviewText"></p>
+                  <p
+                     class="text-orange-400 text-sm font-bold text-left mb-2 continuationReviewInfo hover:cursor-pointer lg:hidden">
+                     ادامه مطلب</p>
+               </div>
+               <!-- product Design container -->
+               <div
+                  class="w-full h-auto hidden lg:flex flex-col gap-y-7 bg-stone-50 lg:bg-transparent pt-10 p-3 rounded-xl lg:p-0">
+                  <h1 class="font-bold text-slate-800">طراحی</h1>
+                  <p class="text-slate-800 leading-8 designText"></p>
+                  <div class="w-full lg:w-10/12 h-auto flex justify-center mx-auto">
+                     <img class="w-full lg:w-7/12 h-auto designImage" alt="This is a product image">
+                  </div>
+               </div>
+               <!-- product camera container -->
+               <div
+                  class="w-full h-auto hidden lg:flex flex-col gap-y-7 bg-stone-50 lg:bg-transparent pt-10 p-3 rounded-xl lg:p-0">
+                  <h1 class="font-bold text-slate-800">دوربین</h1>
+                  <p class="text-slate-800 leading-8 cameraText"></p>
+               </div>
+               <!-- product battery container -->
+               <div
+                  class="w-full h-auto hidden lg:flex flex-col gap-y-7 bg-stone-50 lg:bg-transparent pt-10 p-3 rounded-xl lg:p-0">
+                  <h1 class="font-bold text-slate-800">باتری</h1>
+                  <p class="text-slate-800 leading-8 batteryText"></p>
+               </div>
+               <!-- product design, camera and battery section for small display -->
+               <div class="w-full h-auto flex flex-col gap-y-7 bg-stone-50 lg:hidden pt-10 p-6 rounded-xl lg:p-0">
+                  <div class="w-full md:w-1/2 h-9 bg-stone-100 mx-auto rounded-3xl flex
+               justify-center items-center gap-x-7 p-5">
+                     <span class="p-4 flex items-center shadow-md h-1/2 bg-stone-50 rounded-3xl">
+                        <p class="text-slate-800 text-sm tabItems">دوربین</p>
+                     </span>
+                     <span>
+                        <p class="text-slate-800 text-sm tabItems">طراحی</p>
+                     </span>
+                     <span>
+                        <p class="text-slate-800 text-sm tabItems">باتری</p>
+                     </span>
+                  </div>
+                  <p class="text-slate-800 leading-8 text-justify tabContent"></p>
+                  <div class="w-full lg:w-10/12 h-auto justify-center mx-auto hidden">
+                     <img class="w-full lg:w-7/12 h-auto designImage"
+                        alt="This is a product image">
+                  </div>
+               </div>
+            </section>
+         </section>
+      </div>
+   </main>
+
+   <footer>
+      <custom-footer></custom-footer>
+   </footer>
+
+   <script type="module" src="/src/js/configComponents.js"></script>
+   <script type="module" src="/src/js/phonePage.js"></script>
+</body>
+
+</html>
