@@ -42,4 +42,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          baseurl: /public/home.html
+          publish_dir: ./public/home.html
