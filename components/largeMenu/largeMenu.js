@@ -10,13 +10,13 @@ template.innerHTML = `
          <div class="w-10/12 h-full flex  items-center justify-between">
             <!-- Logo -->
             <span class="w-auto h-auto">
-               <a href="/public/home.html">
+               <a href="/">
                   <img src="/assets/images/main/logo.png" alt="This is website name logo.">
                </a>
             </span>
             <!-- Menu items -->
             <span class="w-11/12 h-auto flex gap-x-7 md:gap-x-5 md:pr-5 pr-10">
-               <a href="/public/home.html" class="font-bold text-stone-800 md:text-sm lg:text-base">خانه</a>
+               <a href="/" class="font-bold text-stone-800 md:text-sm lg:text-base">خانه</a>
                <a href="/public/cart.html" class="font-medium text-stone-800 md:text-sm lg:text-base">سبد خرید</a>
                <a href="/public/favorite.html" class="font-medium md:text-sm lg:text-base text-stone-800">علاقه مندی ها</a>
             </span>

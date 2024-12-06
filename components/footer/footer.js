@@ -4,7 +4,7 @@ template.innerHTML = `
 <link rel="stylesheet" href="/public/build/tailwind.css">
 <div class="w-full h-auto rounded-t-xl mt-16 bg-stone-50 grid grid-cols-12 mb-16 md:mb-0 relative">
    <div class="w-full h-16 absolute bottom-0 flex items-center justify-center">
-      <p class="text-slate-800 font-medium">طراحی شده توسط : <a href="https://amirhosseinbanaei.ir/public/main.html" target="_blank" class="text-orange-400 font-bold text-base">امیرحسین بنائی</a></p>
+      <p class="text-slate-800 font-medium">طراحی شده توسط : <a href="https://amirhosseinbanaei.ir" target="_blank" class="text-orange-400 font-bold text-base">امیرحسین بنائی</a></p>
    </div>
    <!-- Right section of footer -->
    <div class="w-full h-full col-span-full lg:col-span-6 xl:col-span-7 flex flex-col py-7 px-20">
